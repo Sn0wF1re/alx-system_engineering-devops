@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# Display contents of /etc/passwd
+
+file="/etc/passwd"
+i=1
+while read -r line
+do
+  echo "$line" | cut -d ":" -f 1,3,6
+((i++))
+done < "$file"
