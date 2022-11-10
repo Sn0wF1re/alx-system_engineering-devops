@@ -3,7 +3,7 @@
 
 file="/etc/passwd"
 
-while IFS=':' read -r user gid home shell uid password uidinfo
+while IFS=':' read -r user password uid gid uidinfo home shell
 do
   echo "The user $user is part of the $gid gang, lives in $home and rides $shell."\
 	"$uid's place is protected by the passcode $password,"\
