@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+# Display 'Best School' 10 times, if 9, display hi on next line
+
+words='Best School'
+i=0
+while [ "$i" -lt 10 ]
+do
+  if [ "$i" -eq 8 ]
+  then
+    echo "$words"
+    echo 'Hi'
+  else
+    echo "$words"
+  fi
+  (( i++ ))
+done
