@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# Display 'Best School' 10 times
+
+words='Best School'
+i=0
+until [ "$i" -eq 9 ]
+do
+  echo "$words"
+  (( i++ ))
+done
