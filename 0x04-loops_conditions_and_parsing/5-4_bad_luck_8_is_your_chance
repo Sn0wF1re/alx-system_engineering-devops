@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+# Display phrase 10 times, bad luck at 4th iteration, good luck at 8th
+
+words='Best School'
+i=0
+
+while [ "$i" -lt 10 ]
+do
+  if [ "$i" -eq 3 ]
+  then
+    echo 'bad luck'
+  elif [ "$i" -eq 7 ]
+  then
+    echo 'good luck'
+  else
+    echo "$words"
+  fi
+  (( i++ ))
+done
