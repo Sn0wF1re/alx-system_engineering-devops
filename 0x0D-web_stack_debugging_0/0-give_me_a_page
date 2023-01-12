@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Get Apache to run on the container and return a page when querying its root
+
+service apache2 start
