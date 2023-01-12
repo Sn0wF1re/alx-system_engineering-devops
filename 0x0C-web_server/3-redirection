@@ -8,23 +8,23 @@ mkdir -p /var/www/html
 sudo chmod -R 755 /var/www
 echo "Hello World!" > /var/www/html/index.html
 CONFIG=\
-    "server {
-            listen 80 default_server;
-            listen [::]:80 default_server;
+"server {
+        listen 80 default_server;
+        listen [::]:80 default_server;
 
-            root /var/www/html;
-            index index.html index.htm index.nginx-debian.html;
+        root /var/www/html;
+        index index.html index.htm index.nginx-debian.html;
 
 
-            server_name _;
+        server_name _;
 
-            location / {
-                    try_files $uri $uri/ =404;
-            }
+        location / {
+                try_files \$uri \$uri/ =404;
+        }
 
-            if (\$request_filename ~ redirect_me){
-                    rewrite ^/$ https://google.com permanent;
-            }
+        if (\$request_filename ~ redirect_me){
+                rewrite ^/$ https://google.com permanent;
+        }
 }"
 
 bash -c "echo -e '$CONFIG' > /etc/nginx/sites-enabled/default"
