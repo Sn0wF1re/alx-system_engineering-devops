@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 # short and sweet
 ln -sf /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
-sudo service nginx restart
-kill "$(pgrep 'nginx' | head -1)"
+service nginx restart
+pkill -1 -f "/usr/sbin/nginx"
