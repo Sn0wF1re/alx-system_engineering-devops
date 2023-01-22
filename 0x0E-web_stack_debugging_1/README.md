@@ -1,0 +1,1 @@
+This is a continuation of web stack debugging to fix issues with nginx
