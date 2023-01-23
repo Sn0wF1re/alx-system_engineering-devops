@@ -55,8 +55,4 @@ else
 	echo -en "$HAPROXY_CFG_TEMPLATE" >>$HAPROXY_CONFIG
 fi
 
-if [ "$(pgrep -c haproxy)" -le 0 ]; then
-	sudo service haproxy start
-else
-	sudo service haproxy restart
-fi
+sudo service haproxy restart
