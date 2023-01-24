@@ -1,22 +1,18 @@
 #!/usr/bin/env bash
 # displays info about subdomains
 
-records ()
-{
-record="$(dig ${2}.${1} | awk 'NR==14 { print $4 }')"
-
-IP="$(dig ${2}.${1} | awk 'NR==14 { print $5 }')"
-
-echo "The subdomain $2 is a $record record and points to $IP"
+records () {
+    script=$(dig "$2"."$1" | grep -A1 'ANSWER SECTION:' | tr '\t' '\n' | tail -2 | tr '\n' ' ')
+    echo "$2 $script" | awk '{print "The subdomain " $1 " is a " $2 " record and points to " $3}'
 }
 
-# check for no. of args
-if [ "$#" -ne 2 ];
+if [ "$#" == 1 ]
 then
-    records "$1" "www"
-    records "$1" "lb-01"
-    records "$1" "web-01"
-    records "$1" "web-02"
-else
-    records "$1" "$2"
+  records "$1" "www"
+  records "$1" "lb-01"
+  records "$1" "web-01"
+  records "$1" "web-02"
+elif [ "$#" == 2 ]
+then
+  records "$1" "$2"
 fi
