@@ -41,7 +41,7 @@ frontend mogoodfeels.tech-http-frontend
         default_backend mogoodfeels.tech-backend
 
 frontend  mogoodfeels.tech-https-frontend
-        bind *:443 ssl crt /etc/ssl/www.mogoodfeels.tech.pem
+        bind *:443 ssl crt /etc/letsencrypt/live/www.mogoodfeels.tech/fullchain.pem
         http-request set-header X-Forwarded-Proto https
         http-request redirect scheme https code 301 unless { ssl_fc }
         default_backend mogoodfeels.tech-backend
