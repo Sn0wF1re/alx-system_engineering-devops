@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+# displays info about subdomains
+
+records ()
+{
+record="$(dig ${2}.${1} | awk 'NR==14 {print $4}')"
+IpAdd="$(dig ${2}.${1} | awk 'NR==14 {print $5}')"
+
+echo "The subdomain ${2} is a ${record} record and points to ${IpAdd}"
+}
+
+# check for no. of args
+if [ "$#" -ne 2 ];
+then
+    records $1 "www"
+    records $1 "lb-01"
+    records $1 "web-01"
+    records $1 "web-02"
+else
+    records $1 $2
+fi
