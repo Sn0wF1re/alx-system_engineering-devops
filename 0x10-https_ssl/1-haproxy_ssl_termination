@@ -43,7 +43,7 @@ frontend mogoodfeels.tech-http-frontend
 frontend  mogoodfeels.tech-https-frontend
 	bind *:443 ssl crt /etc/ssl/mogoodfeels.tech.pem
 	http-request set-header X-Forwarded-Proto https
-        default_backend beta-scribbles.tech-backend
+        default_backend mogoodfeels.tech-backend
 
 backend mogoodfeels.tech-backend
         balance roundrobin
