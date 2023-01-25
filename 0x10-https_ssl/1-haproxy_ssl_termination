@@ -34,14 +34,9 @@ defaults
         errorfile 504 /etc/haproxy/errors/504.http
 
 #--mogoodfeels.tech-configuration-begins--
-frontend mogoodfeels.tech-frontend-http
+frontend mogoodfeels.tech-frontend
         bind *:80
-        mode http
-        http-request set-header X-Forwarded-Proto http
-        default_backend mogoodfeels.tech-backend
-frontend mogoodfeels.tech-frontend-https
         bind *:443 ssl crt /etc/letsencrypt/live/www.mogoodfeels.tech/fullchain.pem
-        http-request set-header X-Forwarded-Proto https
         default_backend mogoodfeels.tech-backend
 backend mogoodfeels.tech-backend
         balance roundrobin
