@@ -37,7 +37,7 @@ defaults
 frontend mogoodfeels.tech-frontend
         bind *:80
         mode http
-        bind *:443 ssl crt /etc/letsencrypt/live/www.mogoodfeels.tech/fullchain.pem
+        bind *:443 ssl crt /etc/haproxy/certs/www.mogoodfeels.tech.pem
         http-request redirect scheme https code 301 unless { ssl_fc }
         default_backend mogoodfeels.tech-backend
 backend mogoodfeels.tech-backend
