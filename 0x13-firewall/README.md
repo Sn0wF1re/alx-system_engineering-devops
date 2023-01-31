@@ -1,0 +1,1 @@
+This project involves setting up a ufw firewall on all servers along with some rules.
