@@ -15,7 +15,7 @@ def top_ten(subreddit):
         print("None")
         return
 
-    url = f"https://www.reddit.com/r/{subreddit}/hot.json"
+    url = "https://www.reddit.com/r/{}/hot.json".format(subreddit)
     headers = {
         "User-Agent": "linux:0x16-api_advanced:v1.0.0 (by /u/Sn0wF1re)"
     }

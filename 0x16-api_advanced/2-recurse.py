@@ -13,7 +13,7 @@ def recurse(subreddit, hot_list=[], after="", count=0):
     for a given subreddit.
     If no results are found for the given subreddit, return None
     """
-    url = f"https://www.reddit.com/r/{subreddit}/hot.json"
+    url = "https://www.reddit.com/r/{}/hot.json".format(subreddit)
     headers = {
         "User-Agent": "linux:0x16-api_advanced:v1.0.0 (by /u/Sn0wF1re)"
     }
