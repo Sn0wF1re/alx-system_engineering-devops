@@ -1,0 +1,1 @@
+Given a bugged web stack, using strace, find out why Apache is returning a 500 error. Once the issue is found, fix it and then automate it using Puppet (instead of using Bash as you were previously doing)
