@@ -1,0 +1,1 @@
+This project involves setting up an application server to serve dynamic pages using flask.
